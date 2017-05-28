@@ -21,7 +21,7 @@
 				<div v-for="photo in filteredPhotos" class="photos">
 					<img v-bind:src="photo.media.m" v-bind:width="getWidth(photo)" class="thumbnail">
 					<div class="photoDetails">
-						<a class="photoTitle" v-bind:href="photo.link" target="_blank">{{ title(photo) }}</a>
+						<a class="photoTitle title" v-bind:href="photo.link" target="_blank">{{ title(photo) }}</a>
 						<p class="photoTitle by">by</p>
 						<a class="photoTitle by author" v-bind:href="'https://www.flickr.com/photos/' + photo.author_id" target="_blank">{{ author(photo) }}</a>
 					</div>

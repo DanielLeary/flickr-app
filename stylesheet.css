@@ -33,7 +33,6 @@ body {
 }
 .photoTitle {
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
 	margin-left: 6px;
 	margin-right: 0;
 	margin-top: 2px;
@@ -41,21 +40,18 @@ body {
 	text-align: center;
 	word-wrap: break-word;
 	max-width: 100%;
-	color: #2e7bf7;
 	text-decoration: none;
 }
-.photoTitle:hover{
+.title {
+	color: #2e7bf7;
+	font-weight: 600;
+}
+.title:hover{
 	text-decoration: underline;
 }
 .by {
-	font-weight: 400;
 	color: #878787;
-}
-.by:hover{
-	text-decoration: none;
-}
-.author {
-	text-decoration: none;
+	font-weight: 400;
 }
 .author:hover{
 	text-decoration: underline;
