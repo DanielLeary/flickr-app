@@ -41,10 +41,18 @@ body {
 	text-align: center;
 	word-wrap: break-word;
 	max-width: 100%;
+	color: #2e7bf7;
+	text-decoration: none;
+}
+.photoTitle:hover{
+	text-decoration: underline;
 }
 .by {
 	font-weight: 400;
 	color: #878787;
+}
+.by:hover{
+	text-decoration: none;
 }
 .author {
 	text-decoration: none;
