@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Flickr app</title>
+		<link rel="stylesheet" href="stylesheet.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://unpkg.com/vue"></script>
+
+		<script src="index.js"></script>
+		<script src="https://api.flickr.com/services/feeds/photos_public.gne?format=json"></script>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<div class="container">
+				<input v-model="searchTerm" class="searchBar" placeholder="Filter by Tags">
+			</div>
+			<div class="container">
+				<div v-for="photo in filteredPhotos" class="photos">
+					<img v-bind:src="photo.media.m" v-bind:width="getWidth(photo)" class="thumbnail">
+					<div class="photoDetails">
+						<a class="photoTitle" v-bind:href="photo.link">{{ title(photo) }}</a>
+						<p class="photoTitle by">by</p>
+						<a class="photoTitle by author" v-bind:href="'https://www.flickr.com/photos/' + photo.author_id">{{ author(photo) }}</a>
+					</div>
+					<div class="photoDetails">
+						<p class="tags">Tags: {{tags(photo)}}</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
