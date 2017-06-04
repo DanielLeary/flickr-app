@@ -63,6 +63,11 @@ window.onload = function(){
 				flickrOpt.page = page;
 				self.loading = true;
 
+				if(self.photos.page == 25){
+					self.loadingMessage = "No more photos"
+					return;
+				}
+
 				// Loads the page we're looking for
 				$.getJSON( flickerAPI, flickrOpt)
 				.done(function( data ) {
