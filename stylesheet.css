@@ -14,7 +14,7 @@ body {
 }
 
 .photos {
-	width:300px;
+	width:350px;
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-bottom: 40px;
@@ -28,7 +28,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-top: 8px;
+	margin-top: 20px;
 	max-width: 100%;
 }
 .photoTitle {
@@ -45,31 +45,68 @@ body {
 .title {
 	color: #2e7bf7;
 	font-weight: 600;
+	cursor: pointer;
 }
 .title:hover{
 	text-decoration: underline;
 }
 .by {
-	color: #878787;
+	color: #aaaaaa;
 	font-weight: 400;
 }
 .author:hover{
 	text-decoration: underline;
+	cursor: pointer;
 }
-.tags {
+.photoDesc {
+	display: block;
+	margin-top: 15px;
+	max-width: 100%;
+}
+.desc {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
-	text-align: center;
+	display: inline;
 	margin: 0;
 	font-size: 14px;
-	color: #878787;
+	color: #636363;
 	word-wrap: break-word;
 	max-width: 100%;
+}
+.tags {
+	color: #aaaaaa;
+}
+.toggle {
+	color: #2e7bf7;
+	display: inline;
+	cursor: pointer;
+
+}
+.toggleTags {
+	color: #aaaaaa;
+	display: inline;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.less:hover{
+	text-decoration: underline;
 }
 .thumbnail {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	width: 100%;
+}
+.loading {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	color: #383838;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 40px;
+
 }
 
 .searchBar {

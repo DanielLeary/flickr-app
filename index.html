@@ -10,7 +10,6 @@
 		<script src="https://unpkg.com/vue"></script>
 
 		<script src="index.js"></script>
-		<script src="https://api.flickr.com/services/feeds/photos_public.gne?format=json"></script>
 	</head>
 	<body>
 		<div id="app" v-cloak>
@@ -18,19 +17,27 @@
 				<input v-model="searchTerm" class="searchBar" placeholder="Filter by Tags">
 			</div>
 			<div class="container">
-				<div v-for="photo in filteredPhotos" class="photos">
-					<img v-bind:src="photo.media.m" v-bind:width="getWidth(photo)" class="thumbnail">
+				<div v-for="(photo, index) in filteredPhotos" class="photos">
+					<img v-bind:src="photo.url_m" v-bind:width="getWidth(photo)" class="thumbnail">
 					<div class="photoDetails">
-						<a class="photoTitle title" v-bind:href="photo.link" target="_blank">{{ title(photo) }}</a>
+						<a class="photoTitle title" v-bind:href="link(photo)" target="_blank">{{ title(photo) }}</a>
 						<p class="photoTitle by">by</p>
-						<a class="photoTitle by author" v-bind:href="'https://www.flickr.com/photos/' + photo.author_id" target="_blank">{{ author(photo) }}</a>
+						<a class="photoTitle by author" v-bind:href="'https://www.flickr.com/photos/' + photo.owner" target="_blank">{{ photo.ownername }}</a>
 					</div>
-					<div class="photoDetails">
-						<p class="tags">Tags: {{tags(photo)}}</p>
+					<div class="photoDesc">
+						<p class="desc" v-html="photo.description.content"></p>
+						<p class="desc toggle" v-if="photo.description.toggle!='none'" v-on:click="toggle(photo)">...{{photo.description.toggle}}</p>
+					</div>
+					<div class="photoDesc">
+						<p class="desc tags">Tags: {{tags(photo)}}</p>
+						<p class="desc toggleTags" v-if="photo.tagToggle!='none'" v-on:click="tagToggle(photo)">...{{photo.tagToggle}}</p>
 					</div>
 
 				</div>
 			</div>
+			<p class="loading" v-if="loading">{{loadingMessage}}</p>
 		</div>
 	</body>
+
+
 </html>
