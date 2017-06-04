@@ -73,7 +73,6 @@ window.onload = function(){
 				.done(function( data ) {
 					if(data.stat=="fail"){
 						self.loadingMessage = "Error - try reloading";
-						console.log(loadingMessage);
 						console.log("API call failed")
 					} else{
 						formatDescr(data.photos.photo);
