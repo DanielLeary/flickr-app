@@ -78,7 +78,7 @@ window.onload = function(){
 							console.log("First data load:", data);
 						} else {
 							self.photos.photo = self.photos.photo.concat(data.photos.photo);
-							dedup(self.photos.photo);
+							self.photos.photo = dedup(self.photos.photo);
 							self.photos.page = data.photos.page;
 						}
 						console.log("Photos:", self.photos);
