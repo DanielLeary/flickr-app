@@ -17,7 +17,7 @@ body {
 	width:350px;
 	margin-left: 20px;
 	margin-right: 20px;
-	margin-bottom: 40px;
+	margin-bottom: 80px;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -65,15 +65,16 @@ body {
 }
 .desc {
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
+	font-weight: 600;
 	display: inline;
 	margin: 0;
 	font-size: 14px;
-	color: #636363;
+	color: #494949;
 	word-wrap: break-word;
 	max-width: 100%;
 }
 .tags {
+	font-weight: 300;
 	color: #aaaaaa;
 }
 .toggle {

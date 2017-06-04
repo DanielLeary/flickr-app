@@ -86,7 +86,6 @@ window.onload = function(){
 							self.photos.photo = dedup(self.photos.photo);
 							self.photos.page = data.photos.page;
 						}
-						console.log("Photos:", self.photos);
 						self.loading = false;
 					}
 
