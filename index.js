@@ -8,7 +8,7 @@ var flickrOpt = {
 	page: "1",
 	format: "json"
 };
-
+ 
 window.onload = function(){
 
 	var vue = new Vue({
