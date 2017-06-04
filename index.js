@@ -8,7 +8,7 @@ var flickrOpt = {
 	page: "1",
 	format: "json"
 };
- 
+
 window.onload = function(){
 
 	var vue = new Vue({
@@ -73,12 +73,12 @@ window.onload = function(){
 					} else{
 						formatDescr(data.photos.photo);
 						formatTags(data.photos.photo);
-						dedup(data.photos.photo);
 						if($.isEmptyObject(self.photos)){
 							self.photos = data.photos;
 							console.log("First data load:", data);
 						} else {
 							self.photos.photo = self.photos.photo.concat(data.photos.photo);
+							dedup(self.photos.photo);
 							self.photos.page = data.photos.page;
 						}
 						console.log("Photos:", self.photos);
